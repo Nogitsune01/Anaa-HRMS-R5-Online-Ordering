@@ -7,6 +7,7 @@ export default {
         "./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
         "./storage/framework/views/*.php",
         "./resources/views/**/*.blade.php",
+        "node_modules/preline/dist/*.js",
     ],
     darkMode: "class",
     theme: {
@@ -82,8 +83,35 @@ export default {
                     },
                 },
             },
+            keyframes: {
+                rotate: {
+                    "0%":{
+                        transform: "rotate(0deg)"
+                    },
+                    "25%":{
+                        transform: "rotate(30deg)"
+                    },
+                    "50%":{
+                        transform: "rotate(-30deg)"
+                    },
+                    "75%":{
+                        transform: "rotate(20deg)"
+                    },
+                    "95%": {
+                        transform: "rotate(-10deg)"
+                    },
+                    "100%": {
+                        transform: "rotate(0deg)"
+                    }
+                }
+            },
+            animation: {
+                rotate: "rotate 0.6s ease-in-out"
+            },
         },
     },
+    
 
-    plugins: [forms],
+    plugins: [forms,
+        require('preline/plugin'),],
 };
